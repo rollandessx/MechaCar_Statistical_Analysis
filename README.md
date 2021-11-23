@@ -1,28 +1,61 @@
 # MechaCar_Statistical_Analysis
 
-## Linear Regression to Predict MPG:
+## Overview
 
-> summary(mecha_lm)
+AutosRUs’ newest prototype, the MechaCar, is suffering from production troubles that are blocking the manufacturing team’s progress. The best route to go is to look into its production, review the data analytically and that will provide possible solution to its issues.
 
-Call:
-lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
-    ground_clearance + AWD, data = mecha)
+# Action Required
 
-Residuals:
-     Min       1Q   Median       3Q      Max 
--19.4701  -4.4994  -0.0692   5.4433  18.5849 
+Perform multiple linear regression analysis to identify which variables in the dataset predict the mpg of MechaCar prototypes
 
-Coefficients:
-                   Estimate Std. Error t value Pr(>|t|)    
-(Intercept)      -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
-vehicle_length    6.267e+00  6.553e-01   9.563 2.60e-12 ***
-vehicle_weight    1.245e-03  6.890e-04   1.807   0.0776 .  
-spoiler_angle     6.877e-02  6.653e-02   1.034   0.3069    
-ground_clearance  3.546e+00  5.412e-01   6.551 5.21e-08 ***
-AWD              -3.411e+00  2.535e+00  -1.346   0.1852    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Collect summary statistics on the pounds per square inch (PSI) of the suspension coils from the manufacturing lots
 
-Residual standard error: 8.774 on 44 degrees of freedom
-Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
-F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+Run t-tests to determine if the manufacturing lots are statistically different from the mean population
+
+Design a statistical study to compare vehicle performance of the MechaCar vehicles against vehicles from other manufacturers. For each statistical analysis, you’ll write a summary interpretation of the findings.
+
+## Predict MPG Using Linear Regression:
+
+![image](https://user-images.githubusercontent.com/86568537/142965187-e3587f20-4eab-4c81-8bb5-4f0648c92fb6.png)
+
+# Summary
+
+- Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
+
+Looking at the data from the vehicle_length and vehicle_weight it is obvious that they are likely to provide a non-random amount of variance to the MPG values.
+
+- Is the slope of the linear model considered to be zero? Why or why not?
+
+The slope is not considered to be zero, looking at the signif codes we can say the significance level is 0.05 -1, which will sum up to 95%. Non of the coefficient are within the 95% significance level.
+
+- Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+
+Taking the P-value into consideration you can see its less than 0.05 which means its not effectively predicted.
+
+## Create Visualizations for the Trip Analysis
+![image](https://user-images.githubusercontent.com/86568537/142968886-8519e19d-1de1-437e-a961-2fee9da9580f.png)
+
+Looking at the data above Lot1 and Lot2 is within the required varience PSI which is 100PSI but a quick glance at Lot3 you will see the variance PSI is above 100PSI which will perform beyond what is required.
+
+## T-Tests On Suspension Coils
+![image](https://user-images.githubusercontent.com/86568537/142969559-32cdbaff-b31b-4001-a252-e773dbaee986.png)
+
+The p-value for Lot1 and Lot2 is greater than 0.05 which indicates that the null hypothesis is true and should be accepted. Lot3 p-value is less thank 0.05 which means the test hypothesis is false and should be rejected.
+
+## Study Design: MechaCar vs Competition
+
+- What metric or metrics are you going to test?
+Suspension and stability, its horsepower, safety rating, maintenance duration/cost, and fuel consumption efficiency.
+
+- What is the null hypothesis or alternative hypothesis?
+Taking the dataset into consideration there is no statistical difference in both dataset, the null hypothesis is condsiered true when the p-value is greater than 0.05.
+
+- What statistical test would you use to test the hypothesis? 
+The statistical test i would use is the T-Test. The T-Test can be use to determine if there is a significant difference between the means of two groups related in certain features. The T-Test is one of many tests used for the purpose of hypothesis testing in statistics.
+
+- What data is needed to run the statistical test?
+The data needed to run the statistical test is determinant on the p-value, the p-value is accepted if its greater than 0.05 and rejected when its less than or equal to 0.05.
+
+
+
+
